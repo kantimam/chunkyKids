@@ -1,1 +1,17 @@
-//
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.fullHeight{
+    height: 100%;
+}
+
+.overflowHidden{
+    overflow: hidden;
+}
+
+.appContainer{
+    background-color: lightgrey;
+}

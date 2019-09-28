@@ -1,0 +1,35 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+.appContainer {
+  background-color: lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: lightseagreen;
+}
+
+.appContainer main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-radius: 1.4rem 0 0 1.4rem;
+  background-color: white;
+}
+
+.navBar {
+  width: 5rem;
+  background-color: lightseagreen;
+}
+/*# sourceMappingURL=app.css.map */

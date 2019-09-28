@@ -1,0 +1,29 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.fullHeight{
+    height: 100%;
+}
+
+.overflowHidden{
+    overflow: hidden;
+}
+
+.appContainer{
+    background-color: lightgrey;
+    display: flex;
+    background-color: lightseagreen;
+    main{
+        flex: 1;
+        border-radius: 1.4rem 0 0 1.4rem;
+        background-color: white;
+    }
+}
+
+.navBar{
+    width: 5rem;
+    background-color: lightseagreen;
+}
