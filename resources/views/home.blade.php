@@ -14,10 +14,25 @@
     <body>
         <div class="fullHeight overflowHidden appContainer">
             <nav class="navBar fullHeight">
-                asd
+                <div class="userLink">
+                    <div class="userIcon">
+                        <div>x</div>
+                    </div>
+                    <p>
+                        Hi Cunt!
+                    </p>
+                </div>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="helpLink">?</div>
             </nav>
             @yield('content')
-            <main>X</main>
+            <main></main>
         </div>
     </body>
 </html>
