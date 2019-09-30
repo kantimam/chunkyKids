@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data=array(
+        'navItems'=> ['breakfast', 'lunch', 'dinner', 'snack']
+    );
+    return view('home')->with($data);
+});
+
+Route::get('/Breakfast', function () {
+    $data=array(
+        'navItems'=> ['Breakfast', 'Lunch', 'Dinner', 'Snack']
+    );
+    return view('home')->with($data);
 });

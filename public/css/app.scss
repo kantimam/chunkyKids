@@ -1,3 +1,5 @@
+$mainBlue: rgb(51, 101, 192);
+
 html, body{
     margin: 0;
     padding: 0;
@@ -10,6 +12,10 @@ ul, p, h1, h2, h3{
     margin: 0;
     padding: 0;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
 
 .fullHeight{
     height: 100%;
@@ -19,12 +25,37 @@ ul, p, h1, h2, h3{
     overflow: hidden;
 }
 
+.bold{
+    font-weight: bold;
+}
+
+.flexCenterAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flexColCenterAll{
+    /* center if there are multiple elements */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.selected{
+    background-color: white !important;
+    color: $mainBlue;
+}
+
 
 
 .appContainer{
     background-color: lightgrey;
     display: flex;
-    background-color: lightseagreen;
+    background-color: $mainBlue;
     main{
         flex: 1;
         border-radius: 1.4rem 0 0 1.4rem;
@@ -33,18 +64,20 @@ ul, p, h1, h2, h3{
 }
 
 .navBar{
-    width: 5rem;
-    background-color: lightseagreen;
+    width: 5.2rem;
+    background-color: $mainBlue;
     display: flex;
     flex-direction: column;
+    color: white;
     ul{
         margin: auto;
         li{
-            border-radius: 1rem;
-            margin: 0.5rem 0;
-            height: 4rem;
-            width: 4rem;
+            border-radius: 1.2rem;
+            margin: 0.8rem 0;
+            height: 4.2rem;
+            width: 4.2rem;
             background-color: orange;
+            font-size: 0.9rem;
         }
     }
     .helpLink{
@@ -52,10 +85,6 @@ ul, p, h1, h2, h3{
         width: 1.8rem;
         height: 1.8rem;
         border-radius: 2rem;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
@@ -68,15 +97,13 @@ ul, p, h1, h2, h3{
         height: 3rem;
         width: 3rem;
         background-color: white;
-        display: flex;
         div{
             height: 1rem;
             width: 1rem;
-            margin: auto !important;
-            background-color: red;
         }
     }
     p{
+        margin-top: 0.4rem;
         text-align: center;
     }    
 }

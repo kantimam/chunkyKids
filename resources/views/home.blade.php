@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!-- Styles -->
@@ -14,22 +14,29 @@
     <body>
         <div class="fullHeight overflowHidden appContainer">
             <nav class="navBar fullHeight">
-                <div class="userLink">
+                <div class="userLink flexColCenterAll">
                     <div class="userIcon">
-                        <div>x</div>
+                        <img src="{{ asset('img/userIcon.svg') }}"/>
                     </div>
-                    <p>
+                    <p class="bold">
                         Hi Cunt!
                     </p>
                 </div>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <div class="helpLink">?</div>
+                    <ul>
+                        @foreach($navItems as $item)
+                        <a href={{$item}}>
+                            <li
+                                class="{{ $activeRoute ?? ""==$item? " flexColCenterAll selected" : "flexColCenterAll" }}">
+                                <img src="{{ asset('img/userIcon.svg') }}" />
+                                <p>
+                                    {{ ucfirst($item) }}
+                                </p>
+                            </li>
+                        </a>
+
+                        @endforeach
+                    </ul>
+                <div class="helpLink selected flexCenterAll">?</div>
             </nav>
             @yield('content')
             <main></main>
