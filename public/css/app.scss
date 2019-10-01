@@ -1,4 +1,7 @@
 $mainBlue: #4080ff;
+$lightBlue: #f4fafe;
+$mainHeadingSize: 2.4rem;
+@import './searchbar.scss';
 
 html, body{
     margin: 0;
@@ -11,6 +14,9 @@ li{
 ul, p, h1, h2, h3{
     margin: 0;
     padding: 0;
+}
+h1{
+    font-size: $mainHeadingSize;
 }
 a{
     color: white;
@@ -45,6 +51,11 @@ a{
     align-content: center;
 }
 
+.flexSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+}
+
 .selected{
     background-color: white !important;
     color: $mainBlue;
@@ -57,7 +68,7 @@ a{
     display: flex;
     background-color: $mainBlue;
     main{
-        padding: 1rem 0 0 1rem;
+        padding: 3rem 0 0 3rem;
         flex: 1;
         border-radius: 1.4rem 0 0 1.4rem;
         background-color: white;
@@ -111,7 +122,45 @@ a{
 }
 
 .contentContainer{
-    background-color: lightgrey;
     width: 100%;
     height: 100%;
+}
+
+.searchHeader{
+    text-transform: uppercase;
+    padding: 1rem 0;
+}
+
+.searchForm{
+    .searchInput{
+        background-repeat: no-repeat;
+        background-position-x: 0.8rem;
+        background-position-y: center;
+        background-size: 1.4rem;
+
+        background-color: $lightBlue;
+        border: none;
+        box-sizing: border-box;
+        padding: 0.6rem 0.6rem 0.6rem 2.8rem;
+        max-width: 30rem;
+        width: 90%;
+        border-radius: 2rem;
+        font-size: 1.4rem;
+    }
+}
+
+.caloriesHeading{
+    width: 90%;
+    max-width: 30rem;
+    font-size: 1.4rem;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+    div{
+        background-color: $lightBlue;
+        text-align: center;
+        padding: 0.2rem;
+        width: 5rem;
+        border-radius: 2rem;
+    }
 }
