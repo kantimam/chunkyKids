@@ -10,17 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+$data=array(
+    'navItems'=> ['breakfast', 'lunch', 'dinner', 'snack']
+);
+
 
 Route::get('/', function () {
-    $data=array(
-        'navItems'=> ['breakfast', 'lunch', 'dinner', 'snack']
-    );
-    return view('home')->with($data);
+    return view('pages.home');
 });
 
-Route::get('/Breakfast', function () {
-    $data=array(
-        'navItems'=> ['Breakfast', 'Lunch', 'Dinner', 'Snack']
-    );
-    return view('home')->with($data);
+Route::get('/breakfast', function () {
+    return view('pages.home')->with('activeRoute', 'breakfast');
+});
+
+Route::get('/lunch', function () {
+    return view('pages.home')->with('activeRoute', 'lunch');
+});
+
+Route::get('/dinner', function () {
+    return view('pages.home')->with('activeRoute', 'dinner');
+});
+
+Route::get('/snack', function () {
+    return view('pages.home')->with('activeRoute', 'snack');
 });

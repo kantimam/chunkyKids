@@ -23,10 +23,10 @@
                     </p>
                 </div>
                     <ul>
-                        @foreach($navItems as $item)
+                        @foreach(['breakfast', 'lunch', 'dinner', 'snack'] as $item)
                         <a href={{$item}}>
                             <li
-                                class="{{ $activeRoute ?? ""==$item? " flexColCenterAll selected" : "flexColCenterAll" }}">
+                                class="{{ ($activeRoute ?? "") ==$item ? " flexColCenterAll selected" : "flexColCenterAll" }}">
                                 <img src="{{ asset('img/userIcon.svg') }}" />
                                 <p>
                                     {{ ucfirst($item) }}
@@ -38,8 +38,9 @@
                     </ul>
                 <div class="helpLink selected flexCenterAll">?</div>
             </nav>
-            @yield('content')
-            <main></main>
+            <main>
+                @yield('content')
+            </main>
         </div>
     </body>
 </html>
