@@ -16,7 +16,7 @@ $data=array(
 
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('pages.home')->with('activeRoute', 'breakfast');;
 });
 
 Route::get('/breakfast', function () {

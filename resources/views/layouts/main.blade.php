@@ -27,7 +27,14 @@
                         <a href={{$item}}>
                             <li
                                 class="{{ ($activeRoute ?? "") ==$item ? " flexColCenterAll selected" : "flexColCenterAll" }}">
-                                <img src="{{ asset('img/userIcon.svg') }}" />
+                                {{-- <object data="{{ asset('img/'.$item.'.svg') }}" type="image/svg+xml" class="svgNavIcon bgCenter">
+                                </object> --}}
+                                {{-- <img src="{{ asset('img/'.$item.'.svg') }}" alt="" class="svgNavIcon"> --}}
+                                {{-- <svg>
+                                    {{ asset('img/'.$item.'.svg') }}
+                                </svg> --}}
+                                <span id="test" class="icon-{{$item}} svgNavFont"></span>
+
                                 <p>
                                     {{ ucfirst($item) }}
                                 </p>
