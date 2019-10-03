@@ -9,4 +9,7 @@
         @include('components.search_bar', ['tagOptions'=>["low carb"]])
         @include('components.recipe_list_view', ['recipeList'=>$recipeList])
     </div>
+    <div class="sideContainer">
+        
+    </div>
 @endsection

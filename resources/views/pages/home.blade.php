@@ -8,4 +8,7 @@
         </h1>
         @include('components.search_bar', ['tagOptions'=>["low carb"]])
     </div>
+    <div class="sideContainer">
+
+    </div>
 @endsection

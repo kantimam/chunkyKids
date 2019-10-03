@@ -39,7 +39,7 @@
                     </ul>
                 <div class="helpLink selected flexCenterAll">?</div>
             </nav>
-            <main>
+            <main class="overflowAuto">
                 @yield('content')
             </main>
         </div>

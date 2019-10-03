@@ -85,6 +85,11 @@ a {
   overflow: hidden;
 }
 
+.overflowAuto {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -145,12 +150,31 @@ a {
 }
 
 .appContainer main {
-  padding: 3rem 0 0 3rem;
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   border-radius: 1.4rem 0 0 1.4rem;
   background-color: white;
+}
+
+.contentContainer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 65%;
+  padding: 3rem 3rem 0 3rem;
+}
+
+.sideContainer {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-radius: 1.4rem 0 0 1.4rem;
+  width: 35%;
+  height: 100%;
+  background-color: lightseagreen;
 }
 
 .navBar {
@@ -213,11 +237,6 @@ a {
   text-align: center;
 }
 
-.contentContainer {
-  width: 100%;
-  height: 100%;
-}
-
 .searchHeader {
   text-transform: uppercase;
   padding: 1rem 0;
@@ -271,5 +290,75 @@ a {
   padding: 0.2rem;
   width: 5rem;
   border-radius: 2rem;
+}
+
+.recipeListContainer {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  word-break: break-all;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1em;
+}
+
+.recipeListContainer .recipeItem {
+  height: 18rem;
+  background-color: orange;
+}
+
+.recipeListContainer .recipeItem img {
+  width: 100%;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recipeListContainer .recipeItem .recipeInfo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 5.4rem;
+  width: 100%;
+  padding: 0.4rem 0.8rem 0 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipeListContainer .recipeItem .recipeInfo .quickInfo {
+  margin-top: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recipeListContainer .recipeItem .recipeInfo .quickInfo div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.2rem;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  width: 50%;
+  text-align: center;
+}
+
+.recipeListContainer .recipeItem .recipeInfo .quickInfo .calInfo {
+  border-right: 1px solid grey;
+}
+
+.recipeListContainer .recipeItem .recipeInfo .quickInfo .ingredientInfo {
+  border-left: 1px solid grey;
 }
 /*# sourceMappingURL=app.css.map */

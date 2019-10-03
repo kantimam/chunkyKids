@@ -82,6 +82,11 @@ a{
     overflow: hidden;
 }
 
+.overflowAuto{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .bold{
     font-weight: bold;
 }
@@ -119,12 +124,30 @@ a{
     display: flex;
     background-color: $mainBlue;
     main{
-        padding: 3rem 0 0 3rem;
+        position: relative;
         flex: 1;
         border-radius: 1.4rem 0 0 1.4rem;
         background-color: white;
     }
 }
+
+.contentContainer{
+    box-sizing: border-box;
+    width: 65%;
+    padding: 3rem 3rem 0 3rem;
+}
+.sideContainer{
+    box-sizing: content-box;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 1.4rem 0 0 1.4rem;
+    width: 35%;
+    height: 100%;
+    background-color: lightseagreen;
+}
+
+
 
 .navBar{
     width: 5.2rem;
@@ -177,10 +200,7 @@ a{
     }    
 }
 
-.contentContainer{
-    width: 100%;
-    height: 100%;
-}
+
 
 .searchHeader{
     text-transform: uppercase;
@@ -235,5 +255,51 @@ a{
 }
 
 .recipeListContainer{
-    
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    word-break: break-all;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(14rem, 1fr));
+    gap: 1em;
+    .recipeItem{
+        height: 18rem;
+        background-color: orange;
+
+        img{
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+        }
+        .recipeInfo{
+            box-sizing: border-box;
+            height: 5.4rem;
+            width: 100%;
+            padding: 0.4rem 0.8rem 0 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .quickInfo{
+                margin-top: 0.4rem;
+                display: flex;
+                justify-content: space-between;
+                div{
+                    box-sizing: border-box;
+                    padding: 0.2rem;
+                    border-top: 1px solid grey;
+                    border-bottom: 1px solid grey;
+                    width: 50%;
+                    text-align: center;
+                }
+                .calInfo{
+                    border-right: 1px solid grey;
+
+                }
+                .ingredientInfo{
+                    border-left: 1px solid grey;
+
+                }
+            }
+        }
+    }
 }
