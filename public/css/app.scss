@@ -1,5 +1,5 @@
 $mainBlue: #4080ff;
-$lightBlue: #f4fafe;
+$lightBlue: #55a5da63;
 $mainHeadingSize: 2.4rem;
 @import './searchbar.scss';
 
@@ -136,10 +136,10 @@ a{
         margin: auto;
         li{
             padding: 0.3rem;
-            border-radius: 1.2rem;
+            border-radius: 0.8rem;
             margin: 0.8rem 0;
-            height: 3.8rem;
-            width: 3.8rem;
+            height: 3.4rem;
+            width: 3.4rem;
             font-size: 0.9rem;
 
             .svgNavFont{
@@ -188,20 +188,33 @@ a{
 }
 
 .searchForm{
-    .searchInput{
-        background-repeat: no-repeat;
-        background-position-x: 0.8rem;
-        background-position-y: center;
-        background-size: 1.4rem;
-
-        background-color: $lightBlue;
-        border: none;
-        box-sizing: border-box;
-        padding: 0.6rem 0.6rem 0.6rem 2.8rem;
-        max-width: 30rem;
-        width: 90%;
-        border-radius: 2rem;
-        font-size: 1.4rem;
+    .searchContainer{
+        position: relative;
+        .searchInput{
+            background-repeat: no-repeat;
+            background-position-x: 0.8rem;
+            background-position-y: center;
+            background-size: 1.4rem;
+    
+            background-color: $lightBlue;
+            border: none;
+            box-sizing: border-box;
+            padding: 0.6rem 0.6rem 0.6rem 2.8rem;
+            max-width: 30rem;
+            width: 90%;
+            border-radius: 2rem;
+            font-size: 1.4rem;
+        }
+        .submitButton{
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            width: 2.6rem;
+            height: 100%;
+            color: transparent !important;
+            background-color: transparent !important;
+            border: none;
+        }
     }
 }
 
@@ -219,4 +232,8 @@ a{
         width: 5rem;
         border-radius: 2rem;
     }
+}
+
+.recipeListContainer{
+    
 }

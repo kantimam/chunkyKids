@@ -172,10 +172,10 @@ a {
 
 .navBar ul li {
   padding: 0.3rem;
-  border-radius: 1.2rem;
+  border-radius: 0.8rem;
   margin: 0.8rem 0;
-  height: 3.8rem;
-  width: 3.8rem;
+  height: 3.4rem;
+  width: 3.4rem;
   font-size: 0.9rem;
 }
 
@@ -223,12 +223,16 @@ a {
   padding: 1rem 0;
 }
 
-.searchForm .searchInput {
+.searchForm .searchContainer {
+  position: relative;
+}
+
+.searchForm .searchContainer .searchInput {
   background-repeat: no-repeat;
   background-position-x: 0.8rem;
   background-position-y: center;
   background-size: 1.4rem;
-  background-color: #f4fafe;
+  background-color: #55a5da63;
   border: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -237,6 +241,17 @@ a {
   width: 90%;
   border-radius: 2rem;
   font-size: 1.4rem;
+}
+
+.searchForm .searchContainer .submitButton {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  width: 2.6rem;
+  height: 100%;
+  color: transparent !important;
+  background-color: transparent !important;
+  border: none;
 }
 
 .caloriesHeading {
@@ -251,7 +266,7 @@ a {
 }
 
 .caloriesHeading div {
-  background-color: #f4fafe;
+  background-color: #55a5da63;
   text-align: center;
   padding: 0.2rem;
   width: 5rem;

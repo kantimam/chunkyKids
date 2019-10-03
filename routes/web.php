@@ -34,3 +34,5 @@ Route::get('/dinner', function () {
 Route::get('/snack', function () {
     return view('pages.home')->with('activeRoute', 'snack');
 });
+
+Route::get('edamam', 'FoodController@searchEdamam')->name('edamam');

@@ -2,10 +2,29 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 use App\Food;
 
 class FoodController extends Controller
 {
+
+    public function searchEdamam(Request $request){
+        $client = new Client();
+        $YOUR_APP_ID="9e20d292";
+        $YOUR_APP_KEY="1be6d08e27d0a60871a58eb385a61d88";
+        $response = $client->request('GET', "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free");
+        $statusCode = $response->getStatusCode();
+        $body = $response->getBody()->getContents();
+
+
+        $decodeBody=json_decode($body);
+
+        /* foreach($decodeBody->hits as $hit){
+            echo $hit->recipe->uri;
+        } */
+        return view('pages.search_results',['activeRoute'=>'edamam', 'recipeList'=> $decodeBody->hits]);
+    }
+
     /**
      * Display a listing of the resource.
      *
