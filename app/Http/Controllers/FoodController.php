@@ -8,35 +8,26 @@ use App\Food;
 class FoodController extends Controller
 {
 
-    /* public function searchEdamam(Request $request){
-        $client = new Client();
-        $YOUR_APP_ID="9e20d292";
-        $YOUR_APP_KEY="1be6d08e27d0a60871a58eb385a61d88";
-        $response = $client->request('GET', "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free");
-        $statusCode = $response->getStatusCode();
-        $body = $response->getBody()->getContents();
-
-
-        $decodeBody=json_decode($body);
-
-        
-        return view('pages.search_results',['activeRoute'=>'edamam', 'recipeList'=> $decodeBody->hits]);
-    } */
-
     public function searchEdamam(Request $request){
-        /* $client = new Client();
-        $YOUR_APP_ID="9e20d292";
-        $YOUR_APP_KEY="1be6d08e27d0a60871a58eb385a61d88";
-        $response = $client->request('GET', "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free");
-        $statusCode = $response->getStatusCode();
-        $body = $response->getBody()->getContents();
+        if($request->query('query') && strlen($request->query('query'))>1){
+            $queryParam=$request->query('query');
+
+            $client = new Client();
+            $YOUR_APP_ID="9e20d292";
+            $YOUR_APP_KEY="1be6d08e27d0a60871a58eb385a61d88";
+            $response = $client->request('GET', "https://api.edamam.com/search?q=${queryParam}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&calories=591-722&health=alcohol-free");
+            $statusCode = $response->getStatusCode();
+            $body = $response->getBody()->getContents();
 
 
-        $decodeBody=json_decode($body); */
+            $decodeBody=json_decode($body);
 
+            return view('pages.search_results',['activeRoute'=>'edamam', 'recipeList'=> $decodeBody->hits]);
+        }
         
-        return view('pages.search_results',['activeRoute'=>'edamam', 'recipeList'=> [1,2,3,4,5,6,7,8,9,10]]);
     }
+
+    
 
     /**
      * Display a listing of the resource.

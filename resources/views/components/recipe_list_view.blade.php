@@ -2,21 +2,21 @@
     @foreach ($recipeList as $item)
         <div class="recipeItem">
             {{-- {{ json_encode($item->recipe) }} --}}
-            <img src="https://i.imgur.com/rR2O03r.jpg" alt="food image">
+        <img src="{{$item->recipe->image}}" alt="food image">
             <div class="recipeInfo">
                 <p class=recipeName>
-                    some food
+                    {{$item->recipe->label}}
                 </p>
                 <div class="quickInfo">
                     <div class="calInfo">
-                        700 cal
+                        {{ round($item->recipe->calories) }}
                     </div>
                     <div class="ingredientInfo">
-                        7 ingredients
+                        {{ sizeof($item->recipe->ingredients) }}
                     </div>
                 </div>
                 <p class="recipeLevel">
-                    easy
+                    {{ $item->recipe->dietLabels[0] ?? "" }}
                 </p>
             </div>
         </div>

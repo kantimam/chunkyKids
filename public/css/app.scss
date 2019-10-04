@@ -83,8 +83,7 @@ a{
 }
 
 .overflowAuto{
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 .bold{
@@ -135,8 +134,10 @@ a{
     box-sizing: border-box;
     width: 65%;
     padding: 3rem 3rem 0 3rem;
+    transition: 1s;
 }
 .sideContainer{
+    overflow: hidden;
     box-sizing: content-box;
     position: fixed;
     right: 0;
@@ -145,8 +146,42 @@ a{
     width: 35%;
     height: 100%;
     background-color: lightseagreen;
+    transition: 1s;
+
+    .hideSidebar{
+        width: 3rem;
+        height: 3rem;
+        background-color: orange;
+        border: none;
+        border-radius: 3rem;
+    }
 }
 
+/* fixed element hides scrollbar push it over scrollbar width */
+.scrollbarMargin{
+    right: 1rem !important;
+}
+
+.expanded100{
+    width: 100%;
+}
+.shrinkHide{
+    width: 3rem;
+    height: 3rem;
+    aside{
+        display: none;
+    }
+}
+@keyframes fadeOut{
+    0%{
+        height: 100%;
+        width: 35%;
+    }
+    100%{
+        width: 3rem;
+        height: 3rem;
+    }
+}
 
 
 .navBar{
@@ -263,8 +298,11 @@ a{
     grid-template-columns: repeat(auto-fill,minmax(14rem, 1fr));
     gap: 1em;
     .recipeItem{
+        cursor: pointer;
+        padding: 0.2rem;
         height: 18rem;
-        background-color: orange;
+        border: 1px solid $lightBlue;
+        background-color: rgba(220,220,230,0.8);
 
         img{
             width: 100%;
@@ -275,7 +313,7 @@ a{
             box-sizing: border-box;
             height: 5.4rem;
             width: 100%;
-            padding: 0.4rem 0.8rem 0 0.8rem;
+            padding: 0.2rem 0.4rem 0 0.4rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -296,7 +334,7 @@ a{
 
                 }
                 .ingredientInfo{
-                    border-left: 1px solid grey;
+                    /* border-left: 1px solid grey; */
 
                 }
             }

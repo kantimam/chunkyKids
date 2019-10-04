@@ -1,15 +1,5 @@
-@extends('layouts.main'/* , ['activeRoute'=>$activeRoute] */)
+@extends('pages.home')
 
-@section('content')
-    <div class="contentContainer">
-        @include('components.calories_heading', ['calPerDay'=>2600, 'calPlaned'=>1000])
-        <h1 class="searchHeader">
-            your healthy {{ $activeRoute }}
-        </h1>
-        @include('components.search_bar', ['tagOptions'=>["low carb"]])
-        @include('components.recipe_list_view', ['recipeList'=>$recipeList])
-    </div>
-    <div class="sideContainer">
-        
-    </div>
+@section('recipe_list_view')
+    @include('components.recipe_list_view', ['recipeList'=>$recipeList])
 @endsection
